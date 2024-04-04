@@ -18,11 +18,11 @@ COPY . /app/
 
 RUN python manage.py collectstatic --noinput
 
-# RUN until nc -z -v -w30 db 5432; do echo "Waiting for PostgreSQL server..."; sleep 5; done
+RUN until nc -z -v -w30 db 5432; do echo "Waiting for PostgreSQL server..."; sleep 5; done
 
 # RUN python manage.py migrate
 # RUN echo "from django.contrib.auth.models import User; User.objects.create_superuser('root', 'admin@example.com', 'Qwerty123$')" | python manage.py shell
 
 EXPOSE 8000
 
-CMD gunicorn config.wsgi:application --bind 0.0.0.0:8000
+CMD ["gunicorn", "--config", "gunicorn_config.py", "app.wsgi:application"]

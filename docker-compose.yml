@@ -24,6 +24,13 @@ services:
       - .env
     depends_on:
       - db
+  nginx:
+    build: ./nginx
+    ports:
+      - 8687:80
+    depends_on:
+      - web
+    restart: "always"
 
 volumes:
   postgres_data:
