@@ -1,0 +1,77 @@
+openapi: 3.0.0
+info:
+  title: My API
+  description: API documentation for Rochwin test
+  version: 1.0.0
+servers:
+  - url: http://localhost:8687
+paths:
+  /statistics/employee/{id}/:
+    get:
+      summary: Get statistics for an employee
+      parameters:
+        - name: id
+          in: path
+          description: Employee ID
+          required: true
+          schema:
+            type: integer
+        - name: month
+          in: query
+          description: Month (e.g., 1 for January)
+          required: false
+          schema:
+            type: integer
+        - name: year
+          in: query
+          description: Year (e.g., 2023)
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+  /employee/statistics/:
+    get:
+      summary: Get statistics for all employees
+      parameters:
+        - name: month
+          in: query
+          description: Month (e.g., 1 for January)
+          required: false
+          schema:
+            type: integer
+        - name: year
+          in: query
+          description: Year (e.g., 2023)
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+  /statistics/client/{id}:
+    get:
+      summary: Get statistics for a client
+      parameters:
+        - name: id
+          in: path
+          description: Client ID
+          required: true
+          schema:
+            type: integer
+        - name: month
+          in: query
+          description: Month (e.g., 1 for January)
+          required: false
+          schema:
+            type: integer
+        - name: year
+          in: query
+          description: Year (e.g., 2023)
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
