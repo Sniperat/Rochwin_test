@@ -3,10 +3,9 @@ version: '3.8'
 services:
   web:
     build: .
-    command: gunicorn config.wsgi:application --bind 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
-      - static-data:/static
     expose:
       - 8000
     env_file:
@@ -25,16 +24,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
-        - 127.0.0.1:5433:5433
-
-  nginx:
-    build: ./nginx
-    ports:
-      - 8687:80
-    depends_on:
-      - web
-    restart: "always"
+        - 127.0.0.1:5432:5432
 
 volumes:
   postgres_data:
-  static-data:

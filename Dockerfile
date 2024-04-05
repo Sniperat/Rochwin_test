@@ -19,5 +19,3 @@ COPY . /app/
 RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
-
-CMD ["gunicorn", "--config", "gunicorn_config.py", "app.wsgi:application"]
