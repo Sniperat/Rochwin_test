@@ -31,8 +31,8 @@ class SingleEmployeStatistic(APIView):
 
 class AllEmployeesStatistics(APIView):
     def get(self, request, format=None):
-        month = int(request.query_params.get('month', 1))
-        year = int(request.query_params.get('year', datetime.now().year))
+        month = int(request.query_params.get('month', False))
+        year = int(request.query_params.get('year', False))
 
         result = services.get_all_employees_statistic(year, month)        
 

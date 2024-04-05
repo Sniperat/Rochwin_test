@@ -4,7 +4,7 @@ info:
   description: API documentation for Rochwin test
   version: 1.0.0
 servers:
-  - url: http://localhost:8687
+  - url: http://127.0.0.1:8000
 paths:
   /statistics/employee/{id}/:
     get:
