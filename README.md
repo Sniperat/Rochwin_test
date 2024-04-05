@@ -21,12 +21,12 @@
     cd Rochwin_test
     ```
 3. Создайте файл `.env`
-```
-SECRET_KEY=django-insecure-@%*3b8xkb)1fbjaxf*^olgbx%n26eqr0%)zmk9q(&h0@09lwxn
-DEBUG=True
-ALLOWED_HOSTS=*
-DATABASE_URL=psql://postgres:postgres@db:5432/postgres
-```
+    ```
+    SECRET_KEY=django-insecure-@%*3b8xkb)1fbjaxf*^olgbx%n26eqr0%)zmk9q(&h0@09lwxn
+    DEBUG=True
+    ALLOWED_HOSTS=*
+    DATABASE_URL=psql://postgres:postgres@db:5432/postgres
+    ```
 4. Запустите Docker Compose для создания и запуска контейнеров:
 
     ```bash
