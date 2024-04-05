@@ -36,7 +36,7 @@ class AllEmployeesStatistics(APIView):
 
         result = services.get_all_employees_statistic(year, month)        
 
-        return Response(data=result)
+        return Response(result)
     
 
 class ClientStatisticsView(APIView):
